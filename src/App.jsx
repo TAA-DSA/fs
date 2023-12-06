@@ -1,6 +1,7 @@
 import Header from "./components/Header/header";
 import Content from "./components/Content/content";
 import Total from "./components/Total/total";
+import Hello from "./components/Hello/hello";
 
 const App = () => {
   const course = "Half Stack application development";
@@ -18,6 +19,9 @@ const App = () => {
       exercises: 14,
     },
   ];
+
+  const name = "Peter";
+  const age = 10;
   //One way using reduce method
   // const totalExercise = parts.reduce(
   //   (total, parts) => total + parts.exercises,
@@ -39,6 +43,7 @@ const App = () => {
         </div>
       ))}
       <Total exercises={totalExercise} />;
+      <Hello name={name} age={age} />
     </div>
   );
 };
