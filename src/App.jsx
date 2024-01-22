@@ -42,7 +42,7 @@ const App = () => {
           <Content name={parts.name} exercises={parts.exercises} />
         </div>
       ))}
-      <Total exercises={totalExercise} />;
+      <Total exercises={totalExercise} />
       <Hello name={name} age={age} />
     </div>
   );

@@ -1,5 +1,5 @@
 const Content = (props) => {
-  //console.log(props);
+  console.log(props);
   return (
     <div>
       <p>
