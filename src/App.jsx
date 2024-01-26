@@ -2,7 +2,7 @@ import Header from "./components/Header/header";
 import Content from "./components/Content/content";
 import Total from "./components/Total/total";
 import Hello from "./components/Hello/hello";
-import Button from "./components/Button/button";
+import Feedback from "./components/Feedback/feedback";
 
 const App = () => {
   const course = "Half Stack application development";
@@ -45,7 +45,7 @@ const App = () => {
       ))}
       <Total exercises={totalExercise} />
       <Hello name={name} age={age} />
-      <Button />
+      <Feedback />
     </div>
   );
 };
