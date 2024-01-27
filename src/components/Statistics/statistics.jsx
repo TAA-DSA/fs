@@ -2,18 +2,17 @@ const Statistics = (props) => {
   console.log(props);
   const { good, neutral, bad } = props;
   const total = good + neutral + bad;
-  const avg = total / 3;
-  const positive = good / total;
-  //conditional render
-  //only show the values when there is a click
+  const avg = (total / 3).toFixed(1);
+  const positive = ((good / total) * 100).toFixed(1);
+
   return (
     <div>
       <h1>Statistics</h1>
       {(good === 0) & (neutral === 0) & (bad === 0) ? (
         <p>No feedback given</p>
       ) : (
-        <>
-          <table>
+        <table>
+          <tbody>
             <tr>
               <td>good </td>
               <td>{good}</td>
@@ -36,10 +35,10 @@ const Statistics = (props) => {
             </tr>
             <tr>
               <td>positive</td>
-              <td>{positive}</td>
+              <td>{positive}%</td>
             </tr>
-          </table>
-        </>
+          </tbody>
+        </table>
       )}
     </div>
   );
