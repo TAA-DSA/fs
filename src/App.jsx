@@ -3,6 +3,7 @@ import Content from "./components/Content/content";
 import Total from "./components/Total/total";
 import Hello from "./components/Hello/hello";
 import Feedback from "./components/Feedback/feedback";
+import Anecdotes from "./components/Anecdotes/anecdotes";
 
 const App = () => {
   const course = "Half Stack application development";
@@ -46,6 +47,8 @@ const App = () => {
       <Total exercises={totalExercise} />
       <Hello name={name} age={age} />
       <Feedback />
+      <br />
+      <Anecdotes />
     </div>
   );
 };
