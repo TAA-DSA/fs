@@ -21,21 +21,27 @@ const Anecdotes = () => {
     setSelected(randomNumber);
   };
 
-  const points = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0 };
-  console.log(points);
+  //creating state with the Array with the length of anecdote array
 
-  const copy = { ...points };
-  console.log(copy);
+  const [vote, setVote] = useState(Array(anecdotes.length).fill(0));
+  console.log(vote);
 
-  const handleVote = () => {
-    copy[randomNumber] += 1;
+  const handleVote = (index) => {
+    const copy = [...vote];
+    copy[index] += 1;
+    setVote(copy);
     console.log(copy);
   };
 
   return (
     <div>
       {anecdotes[selected]}
-      <p>has {copy[randomNumber]} votes.</p>
+      {anecdotes.map((index) => (
+        <div key={index}>
+          <p>has {vote[index]} votes.</p>
+        </div>
+      ))}
+
       <div>
         <button onClick={handleVote}>vote</button>
         <button onClick={handleClick}>next anecdotes</button>
