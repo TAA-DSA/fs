@@ -47,7 +47,7 @@ const App = () => {
       <Total exercises={totalExercise} />
       <Hello name={name} age={age} />
       <Feedback />
-      <br />
+
       <Anecdotes />
     </div>
   );

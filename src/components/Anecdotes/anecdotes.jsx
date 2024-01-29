@@ -26,26 +26,25 @@ const Anecdotes = () => {
   const [vote, setVote] = useState(Array(anecdotes.length).fill(0));
   console.log(vote);
 
-  const handleVote = (index) => {
+  const handleVote = (randomNumber) => {
     const copy = [...vote];
-    copy[index] += 1;
+    copy[randomNumber] += 1;
     setVote(copy);
     console.log(copy);
   };
 
   return (
     <div>
-      {anecdotes[selected]}
-      {anecdotes.map((index) => (
-        <div key={index}>
-          <p>has {vote[index]} votes.</p>
-        </div>
-      ))}
-
+      <h1>Anecdote of the day</h1>
+      {anecdotes[randomNumber]}
+      <p>has {vote[randomNumber]} votes.</p>
       <div>
         <button onClick={handleVote}>vote</button>
         <button onClick={handleClick}>next anecdotes</button>
       </div>
+      <h1>Anecdote with most votes</h1>
+      {anecdotes[randomNumber]}
+      <p>has {vote[randomNumber]} votes.</p>
     </div>
   );
 };
