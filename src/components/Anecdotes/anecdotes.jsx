@@ -21,28 +21,33 @@ const Anecdotes = () => {
     setSelected(randomNumber);
   };
 
-  //creating state with the Array with the length of anecdote array
+  const obj = {};
+  for (const key in anecdotes) {
+    obj[key] = 0;
+  }
+  //console.log(obj);
 
-  const [vote, setVote] = useState(Array(anecdotes.length).fill(0));
+  const [vote, setVote] = useState(obj);
   console.log(vote);
 
   const handleVote = () => {
-    let copy = [...vote];
-    copy[0] += 1;
+    let copy = { ...vote };
+    console.log(copy);
+    copy[selected] += 1;
     setVote(copy);
-    console.log(vote);
   };
 
   return (
     <div>
       <h1>Anecdote of the day</h1>
       <p>{anecdotes[selected]}</p>
-      <p>has {vote[0]} votes.</p>
+      <p>has {vote[selected]} votes.</p>
       <div>
         <button onClick={handleVote}>vote</button>
         <button onClick={handleClick}>next anecdotes</button>
       </div>
       <h1>Anecdote with most votes</h1>
+      <p>Show the quote with highest vote</p>
     </div>
   );
 };
