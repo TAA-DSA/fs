@@ -30,7 +30,7 @@ const Anecdotes = () => {
     const copy = [...vote];
     copy[randomNumber] += 1;
     setVote(copy);
-    console.log(copy);
+    console.log(vote);
   };
 
   return (
