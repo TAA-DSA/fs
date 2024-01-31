@@ -46,7 +46,6 @@ const Anecdotes = () => {
   let maxValue = Math.max(...voteObj);
 
   let maxKey = voteObj.indexOf(maxValue);
-  console.log(maxKey);
 
   return (
     <div>
