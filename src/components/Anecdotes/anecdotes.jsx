@@ -28,13 +28,25 @@ const Anecdotes = () => {
     obj[key] = 0;
   }
 
+  //State to manage the vote count
   const [vote, setVote] = useState(obj);
 
   const handleVote = () => {
     let copy = { ...vote };
     copy[selected] += 1;
     setVote(copy);
+    console.log(copy);
   };
+
+  //Ex 1.14 final version show the highest vote
+  //anecdote
+
+  let voteObj = Object.values(vote);
+
+  let maxValue = Math.max(...voteObj);
+
+  let maxKey = voteObj.indexOf(maxValue);
+  console.log(maxKey);
 
   return (
     <div>
@@ -46,7 +58,7 @@ const Anecdotes = () => {
         <button onClick={handleClick}>next anecdotes</button>
       </div>
       <h1>Anecdote with most votes</h1>
-      <p>highest Vote</p>
+      <p>{anecdotes[maxKey]}</p>
     </div>
   );
 };
