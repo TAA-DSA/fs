@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+// Anecdote component
 const Anecdotes = () => {
   const anecdotes = [
     "If it hurts, do it more often.",
@@ -13,26 +13,25 @@ const Anecdotes = () => {
   ];
 
   const [selected, setSelected] = useState(0);
-
+  //generate random number
   const randomNumber = Math.floor(Math.random() * anecdotes.length);
-  //console.log(randomNumber);
 
+  //assign the random number to selected - state
   const handleClick = () => {
     setSelected(randomNumber);
   };
+
+  //object with key as anecdote and value is vote initialized as 0
 
   const obj = {};
   for (const key in anecdotes) {
     obj[key] = 0;
   }
-  //console.log(obj);
 
   const [vote, setVote] = useState(obj);
-  console.log(vote);
 
   const handleVote = () => {
     let copy = { ...vote };
-    console.log(copy);
     copy[selected] += 1;
     setVote(copy);
   };
@@ -47,7 +46,7 @@ const Anecdotes = () => {
         <button onClick={handleClick}>next anecdotes</button>
       </div>
       <h1>Anecdote with most votes</h1>
-      <p>Show the quote with highest vote</p>
+      <p>highest Vote</p>
     </div>
   );
 };
